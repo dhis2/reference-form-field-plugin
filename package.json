@@ -1,0 +1,24 @@
+{
+  "name": "reference-capture-form-field-plugin",
+  "version": "1.0.0",
+  "description": "This is a reference implementation of a **DHIS2 Capture Form Field Plugin** from within the DHIS2 Capture App. This is an example which should be used for reference, it **SHOULD NOT** be used directly in production.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.3",
+    "concurrently": "^9.0.1",
+    "wait-on": "^8.0.1"
+  },
+  "scripts": {
+    "build": "cd capture-plugin && yarn install --frozen-lockfile && yarn build --no-verify",
+    "deploy-plugin": "cd capture-plugin && yarn deploy http://localhost:8080 --username admin --password district",
+    "deploy": "wait-on http-get://localhost:8080/api/ping && yarn deploy-plugin",
+    "start-services": "docker compose up --build --renew-anon-volumes --force-recreate --remove-orphans",
+    "start": "concurrently --kill-others-on-fail \"yarn:start-services\" \"yarn:deploy\"",
+    "test": "playwright test"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
