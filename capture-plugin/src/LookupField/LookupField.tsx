@@ -22,12 +22,13 @@ export const LookupField = ({
     values,
 }: Props) => {
     const [patientId, setPatientId] = useState(values['id'] || '')
-    const [successMessage, setSuccessMessage] = useState(false)
+    const [isGenerated, setIsGenerated] = useState(!!values['id'])
 
     const handleChange = useCallback(
         ({ value }: { value: string }) => {
+            if (isGenerated) return 
+            
             setPatientId(value)
-            setSuccessMessage(false)
             if ('id' in fieldsMetadata) {
                 setFieldValue({ fieldId: 'id', value })
             } else if (!drsIdWarningIssued) {
@@ -35,13 +36,15 @@ export const LookupField = ({
                 drsIdWarningIssued = true
             }
         },
-        [setFieldValue, fieldsMetadata]
+        [setFieldValue, fieldsMetadata, isGenerated]
     )
 
     const handleGenerateId = useCallback(() => {
+        if (isGenerated) return
+        
         const newId = generatePatientDrsId()
         setPatientId(newId)
-        setSuccessMessage(true)
+        setIsGenerated(true)
         
         if ('id' in fieldsMetadata) {
             setFieldValue({ fieldId: 'id', value: newId })
@@ -49,9 +52,7 @@ export const LookupField = ({
             console.warn(drsIdWarning)
             drsIdWarningIssued = true
         }
-
-        setTimeout(() => setSuccessMessage(false), 3000)
-    }, [setFieldValue, fieldsMetadata])
+    }, [setFieldValue, fieldsMetadata, isGenerated])
 
     return (
         <div className={classes.fieldContainer}>
@@ -69,22 +70,19 @@ export const LookupField = ({
                         value={patientId}
                         onChange={handleChange}
                         placeholder={i18n.t('DRS-XXXXXXXX')}
+                        disabled={isGenerated}
                     />
 
                     <Button
                         onClick={handleGenerateId}
+                        disabled={isGenerated}
                     >
                         {i18n.t('Generate ID')}
                     </Button>
                 </div>
-                {successMessage && (
-                    <Help valid>
-                        {i18n.t('ID generated successfully!')}
-                    </Help>
-                )}
-                {!successMessage && (
+                {!isGenerated && (
                     <Help>
-                        {i18n.t('Click "Generate ID" to create a unique patient identifier, or enter one manually.')}
+                        {i18n.t('Click "Generate ID" to create a unique patient DRS ID, or enter one manually.')}
                     </Help>
                 )}
             </div>
