@@ -12,31 +12,6 @@
               "IdFromApp": "BdvE9shT6GX",
               "IdFromPlugin": "id",
               "objectType": "TrackedEntityAttribute"
-            },
-            {
-              "IdFromApp": "sB1IHYu2xQT",
-              "IdFromPlugin": "firstName",
-              "objectType": "TrackedEntityAttribute"
-            },
-            {
-              "IdFromApp": "ENRjVGxVL6l",
-              "IdFromPlugin": "lastName",
-              "objectType": "TrackedEntityAttribute"
-            },
-            {
-              "IdFromApp": "oindugucx72",
-              "IdFromPlugin": "sex",
-              "objectType": "TrackedEntityAttribute"
-            },
-            {
-              "IdFromApp": "NI0QRzJvQ0k",
-              "IdFromPlugin": "dateOfBirth",
-              "objectType": "TrackedEntityAttribute"
-            },
-            {
-              "IdFromApp": "Xhdn49gUd52",
-              "IdFromPlugin": "address",
-              "objectType": "TrackedEntityAttribute"
             }
           ]
         },
