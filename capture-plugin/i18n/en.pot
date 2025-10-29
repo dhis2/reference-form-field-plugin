@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2025-10-29T14:48:47.517Z\n"
+"PO-Revision-Date: 2025-10-29T14:48:47.517Z\n"
+
+msgid "Patient DRS ID"
+msgstr "Patient DRS ID"
+
+msgid "DRS-XXXXXXXX"
+msgstr "DRS-XXXXXXXX"
+
+msgid "Generate ID"
+msgstr "Generate ID"
+
+msgid ""
+"Click \"Generate ID\" to create a unique patient DRS ID, or enter one "
+"manually."
+msgstr ""
+"Click \"Generate ID\" to create a unique patient DRS ID, or enter one "
+"manually."
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "Capture Plugin"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr "A simple plugin to support ID generation"
