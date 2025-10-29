@@ -3,7 +3,7 @@ import { Button, Help, Input, Label } from '@dhis2/ui'
 import React, { useState, useCallback } from 'react'
 import { generatePatientDrsId } from '../lib/generatePatientDrsId'
 import { FieldsMetadata, SetFieldValue } from '../Plugin.types'
-import classes from './LookupField.module.css'
+import classes from './IdField.module.css'
 
 // ! NB: This is a little custom, and not so generic
 const drsIdWarning =
@@ -15,7 +15,7 @@ type Props = {
     values: Record<string, any>
 }
 
-export const LookupField = ({
+export const IdField = ({
     setFieldValue,
     fieldsMetadata,
     values,

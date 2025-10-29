@@ -1,5 +1,5 @@
 import React from 'react'
-import { LookupField } from './LookupField'
+import { IdField } from './IdField'
 import { IDataEntryPluginProps } from './Plugin.types'
 import './locales'
 
@@ -14,7 +14,7 @@ const PluginInner = (propsFromParent: IDataEntryPluginProps) => {
         setFieldValue,
     } = propsFromParent
 
-    return <LookupField setFieldValue={setFieldValue} fieldsMetadata={fieldsMetadata} values={values} />
+    return <IdField setFieldValue={setFieldValue} fieldsMetadata={fieldsMetadata} values={values} />
 }
 
 export default PluginInner
