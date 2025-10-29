@@ -82,7 +82,7 @@ module.exports = {
 }
 ```
 
-The main plugin component (`Plugin.tsx`) receives props from the Capture app and renders the custom field component (`LookupField.tsx`). The plugin interacts with the parent form through callback functions provided as props.
+The main plugin component (`Plugin.tsx`) receives props from the Capture app and renders the custom field component (`IdField.tsx`). The plugin interacts with the parent form through callback functions provided as props.
 
 #### Updating Values from the Plugin
 
@@ -255,11 +255,11 @@ export const generatePatientDrsId = (): string => {
 
 ### 2. Customize the UI
 
-Edit [`LookupField.tsx`](capture-plugin/src/LookupField/LookupField.tsx) to modify:
+Edit [`IdField.tsx`](capture-plugin/src/IdField/IdField.tsx) to modify:
 - Field labels and help text
 - Validation logic and error messages
 - Button behavior and styling
-- CSS styling via [`LookupField.module.css`](capture-plugin/src/LookupField/LookupField.module.css)
+- CSS styling via [`IdField.module.css`](capture-plugin/src/IdField/IdField.module.css)
 
 ### 3. Add Multiple Fields
 
@@ -281,6 +281,12 @@ To spin up the example after you have made changes to the plugin, simply run:
 yarn build
 yarn start
 ```
+
+You can also run:
+```sh
+yarn test
+```
+To run all the tests included in the `capture-plugin` directory.
 
 ## Support
 Additional documentation for developing plugins can be found in the [DHIS2 developer documentation](https://developers.dhis2.org/docs/capture-plugins/developer/getting-started).
