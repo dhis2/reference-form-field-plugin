@@ -6,7 +6,6 @@ import { FieldsMetadata, SetFieldValue } from '../Plugin.types'
 import classes from './LookupField.module.css'
 
 // ! NB: This is a little custom, and not so generic
-let drsIdWarningIssued = false
 const drsIdWarning =
     "No field with a plugin alias `id` has been found; the value in this field won't automatically update the form value."
 
@@ -23,6 +22,7 @@ export const LookupField = ({
 }: Props) => {
     const [patientId, setPatientId] = useState(values['id'] || '')
     const [isGenerated, setIsGenerated] = useState(!!values['id'])
+    const [hasIssuedWarning, setHasIssuedWarning] = useState(false)
 
     const handleChange = useCallback(
         ({ value }: { value: string }) => {
@@ -31,12 +31,12 @@ export const LookupField = ({
             setPatientId(value)
             if ('id' in fieldsMetadata) {
                 setFieldValue({ fieldId: 'id', value })
-            } else if (!drsIdWarningIssued) {
+            } else if (!hasIssuedWarning) {
                 console.warn(drsIdWarning)
-                drsIdWarningIssued = true
+                setHasIssuedWarning(true)
             }
         },
-        [setFieldValue, fieldsMetadata, isGenerated]
+        [setFieldValue, fieldsMetadata, isGenerated, hasIssuedWarning]
     )
 
     const handleGenerateId = useCallback(() => {
@@ -48,11 +48,11 @@ export const LookupField = ({
         
         if ('id' in fieldsMetadata) {
             setFieldValue({ fieldId: 'id', value: newId })
-        } else if (!drsIdWarningIssued) {
+        } else if (!hasIssuedWarning) {
             console.warn(drsIdWarning)
-            drsIdWarningIssued = true
+            setHasIssuedWarning(true)
         }
-    }, [setFieldValue, fieldsMetadata, isGenerated])
+    }, [setFieldValue, fieldsMetadata, isGenerated, hasIssuedWarning])
 
     return (
         <div className={classes.fieldContainer}>
@@ -80,7 +80,12 @@ export const LookupField = ({
                         {i18n.t('Generate ID')}
                     </Button>
                 </div>
-                {!isGenerated && (
+                {!('id' in fieldsMetadata) && (
+                    <Help error>
+                        {i18n.t(drsIdWarning)}
+                    </Help>
+                )}
+                {!isGenerated && ('id' in fieldsMetadata) && (
                     <Help>
                         {i18n.t('Click "Generate ID" to create a unique patient DRS ID, or enter one manually.')}
                     </Help>
