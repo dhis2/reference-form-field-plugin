@@ -206,7 +206,7 @@ Tracker Plugin Configurator is available from [App Hub](https://apps.dhis2.org/a
 
 #### Following This Reference Implementation
 
-If you are running this reference implementation using the Quick Start instructions, the plugin is **already configured** and the DHIS2 instance has been seeded with the necessary plugin configuration. The form field plugin is already set up and mapped to the DRS program.
+If you are running this reference implementation using the [Quick Start](#quick-start) instructions, the plugin is **already configured** and the DHIS2 instance has been seeded with the necessary plugin configuration. The form field plugin is already set up and mapped to the DRS program.
 
 If you want to make changes to the existing configuration:
 
@@ -233,7 +233,9 @@ If you are setting up a form field plugin for the first time in your own DHIS2 i
 7. Configure the field mappings for your plugin through the UI by clicking the settings button on the plugin element.
 8. Click the save button to save the configuration to the data store.
 
-The Plugin settings dialog allows you to map DHIS2 fields (Tracked Entity Attributes or Data Elements) to plugin field aliases. The plugin can only access fields that are explicitly mapped in this configuration.
+The Plugin settings dialog allows you to map DHIS2 fields (Tracked Entity Attributes or Data Elements) to plugin field aliases.
+
+> **Note**: The plugin can only access fields that are explicitly mapped in this configuration.
 
 ## Customizing This Example
 
