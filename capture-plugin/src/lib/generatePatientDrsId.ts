@@ -1,4 +1,3 @@
-// TODO: add documentation
 export const generatePatientDrsId = (): string => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
     const length = 8
