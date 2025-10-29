@@ -8222,11 +8222,6 @@ json5@^2.1.2, json5@^2.2.0, json5@^2.2.3:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-jsonata@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/jsonata/-/jsonata-2.0.6.tgz#1187ec97f4662d6857b1cc40770f3ea61345d04c"
-  integrity sha512-WhQB5tXQ32qjkx2GYHFw2XbL90u+LLzjofAYwi+86g6SyZeXHz9F1Q0amy3dWRYczshOC3Haok9J4pOCgHtwyQ==
-
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
@@ -11830,9 +11825,9 @@ vite-plugin-dynamic-import@^1.5.0:
     magic-string "^0.30.11"
 
 vite@^5.2.9:
-  version "5.4.19"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-5.4.19.tgz#20efd060410044b3ed555049418a5e7d1998f959"
-  integrity sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==
+  version "5.4.21"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-5.4.21.tgz#84a4f7c5d860b071676d39ba513c0d598fdc7027"
+  integrity sha512-o5a9xKjbtuhY6Bi5S3+HvbRERmouabWbyUcpXXUA1u+GNUKoROi9byOJ8M0nHbHYHkYICiMlqxkg1KkYmm25Sw==
   dependencies:
     esbuild "^0.21.3"
     postcss "^8.4.43"
