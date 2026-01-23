@@ -27,7 +27,7 @@
   "dependencies": {
     "@dhis2/app-runtime": "^3.14.5",
     "@dhis2/ui": "^10.7.8",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "typescript": "^5.4.5"
   }
 }
